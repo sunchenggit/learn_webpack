@@ -20,13 +20,16 @@
   "dependencies": {
     "css-loader": "^5.0.2",
     "csv-loader": "^3.0.3",
+    "json5": "^2.2.0",
     "lodash": "^4.17.20",
     "sass": "^1.32.7",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "toml": "^3.0.0",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",
     "webpack-encoding-plugin": "^0.3.1",
-    "xml-loader": "^1.2.1"
+    "xml-loader": "^1.2.1",
+    "yamljs": "^0.3.0"
   }
 }
