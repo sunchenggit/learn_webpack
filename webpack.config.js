@@ -10,5 +10,16 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         // 输出文件名
         filename: 'bundle.js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [
+            "style-loader",
+            "css-loader"
+          ]
+        }
+      ]
     }
 }
