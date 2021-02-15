@@ -1,0 +1,25 @@
+{
+  "name": "learn_webpack",
+  "version": "1.0.0",
+  "description": "## doc 分支是按照官网文档学习的",
+  "private": true,
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunchenggit/learn_webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunchenggit/learn_webpack/issues"
+  },
+  "homepage": "https://github.com/sunchenggit/learn_webpack#readme",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
