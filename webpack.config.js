@@ -1,66 +1,28 @@
 // 导入nodejs中处理路径的包
 const path = require('path')
-const toml = require('toml')
-const yaml = require('yamljs')
-const json5 = require('json5')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     // 入口
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        print: './src/print.js'
+    },
+    // 插件
+    plugins:[
+        // 自动处理html文件
+        new HtmlWebpackPlugin({
+            title: "管理输出"
+        }),
+        // 清理 /dist 文件夹
+        new CleanWebpackPlugin()
+    ],
     // 出口
     output: {
         // 输出路径
         path: path.resolve(__dirname, 'dist'),
         // 输出文件名
-        filename: 'bundle.js'
-    },
-    module: {
-      rules: [
-        {
-          test: /\.s[ac]ss$/i,
-          use: [
-            "style-loader",
-            "css-loader",
-            "sass-loader"
-          ]
-        },
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource'
-        },
-        {
-          test: /\.(woff|woff2|eot|ttf|otf)$/i,
-          type: 'asset/resource'
-        },
-        {
-          test: /\.(csv|tsv)$/i,
-          use: ['csv-loader']
-        },
-        {
-          test: /\.xml$/i,
-          use: ['xml-loader']
-        },
-        {
-          test: /\.toml$/i,
-          type: 'json',
-          parser: {
-            parse: toml.parse
-          }
-        },
-        {
-          test: /\.yaml$/i,
-          type: 'json',
-          parser: {
-            parse: yaml.parse
-          }
-        },
-        {
-          test: /\.json5$/i,
-          type: 'json',
-          parser: {
-            parse: json5.parse
-          }
-        }
-      ]
+        filename: '[name].bundle.js'
     }
 }
